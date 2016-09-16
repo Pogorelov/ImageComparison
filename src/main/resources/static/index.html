@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Image Comparison</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-social.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <link rel="stylesheet" href="css/device-mockups.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Theme CSS -->
+    <link href="css/page.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">Go up</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#compare-image">Compare Images</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="header-content">
+                    <div class="header-content-inner">
+                        <h1>Would you like to compare two images? Stop waiting!</h1>
+                        <a href="#compare-image" class="btn  btn-xl btn-outline page-scroll">Start Now!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="device-container">
+                    <div class="device-mockup iphone6_plus portrait white">
+                        <div class="device">
+                            <div class="screen">
+                                <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                <img src="img/home.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="button">
+                                <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="compare-image" class="bg-primary text-center" style="height: 650px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <label class="btn btn-outline btn-outline-color btn-xl"> Choose first image
+                    <input type="file" style="display: none" id="input1" multiple>
+                </label>
+            </div>
+            <div class="col-md-4">
+                <label id='resultBtn' style="display: none"
+                       class="btn btn-outline btn-outline-color btn-xl">Compare</label>
+            </div>
+            <div class="col-md-4">
+                <label class="btn btn-outline btn-outline-color btn-xl"> Choose second image
+                    <input type="file" style="display: none" id="input2" multiple>
+                </label>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 5%">
+            <div class="col-md-6">
+                <img id="img1" style="display: none;" src=""/>
+            </div>
+            <div class="col-md-6">
+                <img id="img2" style="display: none;" src=""/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <img id="img3" style="display: none;" src=""/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact bg-primary">
+    <div class="container">
+        <h1>Hey! My name is Maxim :)</h1>
+        <ul class="list-inline list-social">
+            <a href="https://www.instagram.com/pogorelov.maxim/" class="instagram-icon btn btn-social-icon  btn-lg">
+                <!--<i class="fa instagram-icon"></i>-->
+            </a>
+            <a href="https://www.facebook.com/Pogorelov23" class="btn btn-social-icon btn-lg btn-facebook">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/pogorelovmaxim" class="btn btn-social-icon btn-lg btn-linkedin">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </ul>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <p>&copy; 2016 Developed by Maxim Pogorelov. All Rights Reserved.</p>
+    </div>
+</footer>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/page.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>

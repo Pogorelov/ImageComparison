@@ -1,0 +1,9 @@
+spring:
+  main:
+    sources: com.image.comparison.ComparisonApplication
+
+server.port: 8086
+
+logging:
+  level:
+      root: INFO
