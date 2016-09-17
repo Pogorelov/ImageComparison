@@ -10,8 +10,10 @@ $(document).ready(function () {
         }
     };
 
-    var hideImg3 = function() {
-        $('#img3').css('display', 'none');
+    var changeDisplayImg = function(id, value) {
+        var elem = $('#' + id);
+        if(elem.css('display') !== value)
+            $('#' + id).css('display', value);
     };
 
     var uploadImg = function(id, data, division) {
@@ -21,11 +23,32 @@ $(document).ready(function () {
             .height((100 / division) + '%');
     };
 
+    var loadingIcon = function(shouldStop) {
+        var loading = $('#loader');
+        var result = shouldStop ? 'none' : '';
+        loading.css('display', result);
+    };
+
+    $('#input1').click(function() {
+        changeDisplayImg('img3', 'none');
+        changeDisplayImg('img1', '');
+        changeDisplayImg('img2', '');
+    });
+
+    $('#input2').click(function() {
+        changeDisplayImg('img3', 'none');
+        changeDisplayImg('img2', '');
+        changeDisplayImg('img1', '');
+    });
+
     $('#input1').change(function() {
-        hideImg3();
+        console.log('change1');
+        changeDisplayImg('img3', 'none');
         if(this.files && this.files[0]) {
+            console.log('change1');
             var reader = new FileReader();
             reader.onload = function(e) {
+                console.log('change1');
                 uploadImg('img1', e.target.result, 1);
             };
 
@@ -36,7 +59,7 @@ $(document).ready(function () {
 
 
     $('#input2').change(function() {
-        hideImg3();
+        changeDisplayImg('img3', 'none');
         if(this.files && this.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
@@ -56,6 +79,8 @@ $(document).ready(function () {
         var img1 = $('#input1')[0].files[0];
         var img2 = $('#input2')[0].files[0];
 
+        loadingIcon(false);
+
         var formData = new FormData();
         formData.append('image1', img1);
         formData.append('image2', img2);
@@ -67,11 +92,17 @@ $(document).ready(function () {
             contentType: false,
             type: 'POST',
             success: function (data) {
-                var srcVal = "data:image/png;base64," + data;
-                uploadImg('img3', srcVal, 2);
+                setTimeout(function() {
+                    loadingIcon(true);
+                    var srcVal = "data:image/png;base64," + data;
+                    uploadImg('img3', srcVal, 2);
+                }, 1000);
             },
             error: function (err) {
-                console.log(err);
+                setTimeout(function() {
+                    loadingIcon(true);
+                    console.log(err);
+                }, 1000);
             }
         });
     });
